@@ -435,6 +435,97 @@
   .lightbox-close:hover{ background: var(--brass); border-color: var(--brass); }
   .lightbox-close svg{ width:18px; height:18px; }
 
+  /* ---------- RESUME ---------- */
+  .resume-grid{
+    display:grid;
+    grid-template-columns: 1fr .6fr;
+    gap: 60px;
+    align-items:start;
+  }
+  .resume-block{ margin-bottom: 50px; }
+  .resume-block:last-child{ margin-bottom:0; }
+  .resume-block h3{
+    font-size: 19px; font-weight: 800;
+    margin-bottom: 26px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .resume-block h3::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background: var(--brass); flex-shrink:0;
+  }
+
+  .timeline{ position:relative; }
+  .t-item{
+    position:relative;
+    padding-right: 28px;
+    padding-bottom: 34px;
+    border-right: 1px solid var(--line);
+    margin-right: 6px;
+  }
+  .t-item:last-child{ border-color: transparent; padding-bottom:0; }
+  .t-item::before{
+    content:""; position:absolute; right:-5px; top:3px;
+    width: 10px; height:10px; border-radius:50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+  .t-item .t-role{ font-weight: 800; font-size: 16px; }
+  .t-item .t-org{ color: var(--ink-soft); font-size: 14px; margin-top: 2px; }
+  .t-item .t-date{
+    font-size: 12.5px; color: var(--muted);
+    margin-top: 6px; letter-spacing:.2px;
+  }
+  .t-item .t-desc{ font-size: 14.5px; color: var(--ink-soft); margin-top: 12px; max-width: 560px; }
+  .t-item .t-link{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size: 13px; font-weight:700; color: var(--brass);
+    margin-top: 10px;
+  }
+
+  .side-card{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 26px;
+  }
+  .side-card:last-child{ margin-bottom:0; }
+  .side-card h4{
+    font-size: 15px; font-weight:800;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .chip-list{ display:flex; flex-wrap:wrap; gap:9px; }
+  .chip{
+    padding: 8px 15px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    font-size: 12.5px; font-weight: 600;
+    color: var(--ink-soft);
+  }
+  .cert-item{ padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .cert-item:last-child{ border-bottom:none; padding-bottom:0; }
+  .cert-item .c-name{ font-weight: 700; font-size: 14px; }
+  .cert-item .c-meta{ font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .lang-row{ display:flex; justify-content:space-between; align-items:center; }
+  .lang-row .stars{ color: var(--brass); letter-spacing: 2px; font-size:14px; }
+  .contact-list{ display:flex; flex-direction:column; gap:14px; }
+  .contact-list li{
+    display:flex; align-items:center; gap:12px;
+    font-size: 13.5px; color: var(--ink-soft);
+  }
+  .contact-list svg{ width:17px; height:17px; color: var(--brass); flex-shrink:0; }
+  .linkedin-btn{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    background: var(--ink); color: var(--cream);
+    padding: 13px; border-radius: 12px;
+    font-size: 13.5px; font-weight:700;
+    transition: background .25s ease;
+  }
+  .linkedin-btn:hover{ background: var(--accent); }
+
   /* ---------- FOOTER ---------- */
   footer{
     padding: 46px 0 40px;
@@ -451,6 +542,7 @@
     .portrait-wrap{ order:-1; max-width: 320px; margin: 0 auto; }
     .projects{ grid-template-columns: 1fr 1fr; }
     .final-cta{ margin: 0 16px; padding: 60px 28px; }
+    .resume-grid{ grid-template-columns: 1fr; gap: 46px; }
   }
   @media (max-width: 640px){
     .wrap{ padding: 0 22px; }
@@ -471,7 +563,7 @@
       <div class="brand">رومینا فیروزبخش<span>.</span></div>
       <a class="top-cta" href="https://wa.me/989129339628" target="_blank" rel="noopener">
         <span>گفتگو در واتساپ</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.73 13.4L3 21l3.7-1.28a8.9 8.9 0 0 0 4.35 1.13h0a8.94 8.94 0 0 0 8.94-8.94 8.87 8.87 0 0 0-2.4-5.6zM12.05 19.4a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.24.78.75-2.18-.18-.28a7.44 7.44 0 1 1 13.83-3.85 7.44 7.44 0 0 1-7.44 6.72zm4.08-5.57c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.57.73-.7.88-.13.15-.26.16-.48.05a6.1 6.1 0 0 1-1.8-1.11 6.75 6.75 0 0 1-1.24-1.55c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.08-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43a.82.82 0 0 0-.6.28 2.5 2.5 0 0 0-.78 1.86c0 1.1.8 2.16.91 2.31.11.15 1.57 2.4 3.8 3.36.53.23.94.36 1.26.47.53.17 1.01.14 1.39.09.42-.06 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.1-.2-.15-.42-.26z"/></svg>
       </a>
     </div>
   </div>
@@ -482,12 +574,13 @@
       <div>
         <div class="eyebrow">درباره من</div>
         <h1>من <em>رومینا فیروزبخش</em> هستم</h1>
-        <div class="hero-role">۱۰ سال تجربه‌ی طراحی سایت و سئو</div>
+        <div class="hero-role">۶ سال تجربه در سئو و طراحی سایت</div>
         <p class="hero-bio">
-          فارغ‌التحصیل مهندسی فناوری اطلاعات (IT) هستم و بیش از یک دهه است در دنیای طراحی وب و سئو فعالیت می‌کنم؛
-          از طراحی رابط کاربری فروشگاه‌های اینترنتی تا بهینه‌سازی سایت برای موتورهای جستجو.
-          تخصصم ترکیبی از نگاه فنی و ذوق بصری است و این روزها کمک می‌کنم کسب‌وکارها سایتی داشته باشند
-          که هم زیبا باشد، هم واقعاً دیده شود.
+          ۲۸ ساله و ساکن تهرانم. حوزه تخصصی و علاقه اصلی‌ام سئو (SEO) و بهینه‌سازی وب‌سایت‌هاست.
+          طی ۶ سال گذشته در زمینه سئو، دیجیتال مارکتینگ و طراحی سایت فعالیت داشته‌ام و همواره تلاش کرده‌ام
+          دانشم را با الگوریتم‌های به‌روز گوگل و روندهای جدید این حوزه هماهنگ نگه دارم. در این مدت روی
+          بیش از ۲۰ پروژه سئو و طراحی سایت کار کرده‌ام و مشتاقم با توسعه مهارت‌های تخصصی‌ام، در بهبود
+          عملکرد و رشد وب‌سایت‌ها نقش مؤثرتری ایفا کنم.
         </p>
         <div class="hero-ctas">
           <a href="#web-design" class="btn btn-primary">
@@ -497,6 +590,10 @@
           <a href="#seo" class="btn btn-outline">
             نمونه کارهای سئو
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+          <a href="#resume" class="btn btn-outline">
+            رزومه من
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5a1 1 0 0 0 1 1h5M8 13h8M8 17h5M9 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5H9z"/></svg>
           </a>
         </div>
       </div>
@@ -508,7 +605,7 @@
         <div class="portrait-frame">
           <img src="assets/romina-portrait.jpg" alt="رومینا فیروزبخش">
         </div>
-        <div class="badge-exp"><b>۱۰</b><span>سال تجربه</span></div>
+        <div class="badge-exp"><b>۶</b><span>سال تجربه</span></div>
       </div>
     </div>
   </section>
@@ -635,6 +732,169 @@
         <div class="rings-icon"><span></span><span></span><span></span></div>
         <h3>این بخش به‌زودی تکمیل می‌شود</h3>
         <p>در حال آماده‌سازی نمونه‌کارهای سئو هستم؛ تا آن زمان می‌توانید برای صحبت درباره پروژه سئوی خودتان پیام بدهید.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="section section-alt" id="resume">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="label">رزومه</div>
+          <h2>سوابق کاری و تحصیلی</h2>
+        </div>
+        <p>مسیر حرفه‌ای من در حوزه سئو، دیجیتال مارکتینگ و طراحی سایت.</p>
+      </div>
+
+      <div class="resume-grid">
+
+        <!-- MAIN COLUMN -->
+        <div>
+
+          <div class="resume-block">
+            <h3>سوابق شغلی</h3>
+            <div class="timeline">
+              <div class="t-item">
+                <div class="t-role">کارشناس سئو</div>
+                <div class="t-org">تجارت‌گرام (تهران)</div>
+                <div class="t-date">اردیبهشت ۱۴۰۴ – اسفند ۱۴۰۴</div>
+              </div>
+              <div class="t-item">
+                <div class="t-role">کارشناس سئو</div>
+                <div class="t-org">آژانس دیجیتال مارکتینگ فخرائی (تهران)</div>
+                <div class="t-date">مهر ۱۴۰۳ – اسفند ۱۴۰۳</div>
+              </div>
+              <div class="t-item">
+                <div class="t-role">کارشناس سئو</div>
+                <div class="t-org">صنوبر (تهران)</div>
+                <div class="t-date">دی ۱۴۰۰ – شهریور ۱۴۰۳</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-block">
+            <h3>سوابق تحصیلی</h3>
+            <div class="timeline">
+              <div class="t-item">
+                <div class="t-role">لیسانس مهندسی فناوری اطلاعات (IT)</div>
+                <div class="t-org">دانشگاه آزاد اسلامی، واحد تهران شمال</div>
+                <div class="t-date">آذر ۱۳۹۵ – خرداد ۱۴۰۰</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-block">
+            <h3>پروژه‌ها</h3>
+            <div class="timeline">
+              <div class="t-item">
+                <div class="t-role">Permaglow Beauty</div>
+                <div class="t-org">سئوی یک کسب‌وکار بین‌المللی هلندی</div>
+                <div class="t-date">مرداد ۱۴۰۴ – دی ۱۴۰۴</div>
+                <p class="t-desc">مسئولیت کامل بهینه‌سازی سئو شامل تحلیل کلمات کلیدی، بهبود ساختار سایت، بهینه‌سازی محتوا و رفع خطاهای فنی را برعهده داشتم و شاخص‌های عملکرد سایت را بهبود دادم.</p>
+                <a class="t-link" href="https://permaglowbeauty.nl/" target="_blank" rel="noopener">permaglowbeauty.nl</a>
+              </div>
+              <div class="t-item">
+                <div class="t-role">وب‌سایت یوگا</div>
+                <div class="t-org">طراحی و اجرای کامل وب‌سایت در حوزه یوگا</div>
+                <div class="t-date">بهمن ۱۴۰۳ – اردیبهشت ۱۴۰۵</div>
+                <p class="t-desc">طراحی رابط کاربری، تولید محتوا، بهینه‌سازی فنی و محتوایی برای سئو و مدیریت تمامی مراحل توسعه و رشد سایت با تمرکز بر افزایش دیده‌شدن در گوگل.</p>
+                <a class="t-link" href="https://rominayoga.com/" target="_blank" rel="noopener">rominayoga.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-block">
+            <h3>کارآموزی‌ها</h3>
+            <div class="timeline">
+              <div class="t-item">
+                <div class="t-role">سئو در صنوبر</div>
+                <div class="t-org">دوره کارآموزی ۳ ماهه در زمینه سئو</div>
+                <div class="t-date">مهر ۱۴۰۰ – آذر ۱۴۰۰</div>
+              </div>
+              <div class="t-item">
+                <div class="t-role">طراحی سایت در شرکت دوران</div>
+                <div class="t-org">دوره کارآموزی ۳ ماهه در زمینه برنامه‌نویسی با Golang و Python</div>
+                <div class="t-date">تیر ۱۳۹۸ – شهریور ۱۳۹۸</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div>
+
+          <div class="side-card">
+            <h4>مهارت‌ها</h4>
+            <div class="chip-list">
+              <span class="chip">سئو</span>
+              <span class="chip">کیوردریسرچ</span>
+              <span class="chip">On-page SEO</span>
+              <span class="chip">Off-page SEO</span>
+              <span class="chip">Local SEO</span>
+              <span class="chip">Link Building</span>
+              <span class="chip">Technical SEO</span>
+              <span class="chip">SEO Tools</span>
+              <span class="chip">Content Optimization</span>
+              <span class="chip">تولید محتوا</span>
+              <span class="chip">طراحی سایت با وردپرس</span>
+              <span class="chip">ووکامرس</span>
+              <span class="chip">Prompt نویسی</span>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <h4>دوره‌ها و گواهینامه‌ها</h4>
+            <div class="cert-item">
+              <div class="c-name">سئو پیشرفته</div>
+              <div class="c-meta">عماد چابک، امین هاشمی، محسن حبیبی</div>
+            </div>
+            <div class="cert-item">
+              <div class="c-name">HTML &amp; CSS</div>
+              <div class="c-meta">مجتمع فنی تهران (نیاوران) — مرداد ۱۳۹۷</div>
+            </div>
+            <div class="cert-item">
+              <div class="c-name">+Network</div>
+              <div class="c-meta">مجتمع فنی تهران (نیاوران) — مرداد ۱۳۹۹</div>
+            </div>
+            <div class="cert-item">
+              <div class="c-name">CEH</div>
+              <div class="c-meta">موسسه ایفل — مهر ۱۳۹۸</div>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <h4>زبان</h4>
+            <div class="lang-row">
+              <span>انگلیسی</span>
+              <span class="stars">★★★☆☆</span>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <h4>اطلاعات تماس</h4>
+            <ul class="contact-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+                firouzromina@gmail.com
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span dir="ltr">0912 933 9628</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                تهران، فرمانیه
+              </li>
+            </ul>
+            <a class="linkedin-btn" style="margin-top:18px;" href="https://www.linkedin.com/in/romina-firouzbakhsh" target="_blank" rel="noopener">
+              مشاهده لینکدین
+            </a>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </section>
