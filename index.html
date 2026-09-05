@@ -304,27 +304,62 @@
   .card-link:hover{ color: var(--brass); }
   .card-link:hover svg{ transform: translateX(-4px); }
 
-  /* ---------- SEO EMPTY STATE ---------- */
-  .seo-empty{
-    border: 1px dashed var(--line);
-    border-radius: var(--radius);
+  /* ---------- SEO PROJECT GRID ---------- */
+  .seo-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .seo-card{
     background: var(--panel);
-    padding: 80px 40px;
-    text-align:center;
-    display:flex; flex-direction:column; align-items:center; gap:22px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 30px;
+    display:flex; flex-direction:column; gap: 14px;
+    transition: transform .3s ease, box-shadow .3s ease;
   }
-  .seo-empty .rings-icon{
-    width: 74px; height:74px;
-    position: relative;
+  .seo-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 26px 44px -24px rgba(32,31,28,.26);
   }
-  .seo-empty .rings-icon span{
-    position:absolute; border-radius:50%; border: 1.5px solid var(--brass-soft);
+  .seo-card-top{
+    display:flex; align-items:flex-start; justify-content:space-between;
+    gap: 12px;
   }
-  .seo-empty .rings-icon span:nth-child(1){ inset:0; }
-  .seo-empty .rings-icon span:nth-child(2){ inset:14px; border-color: var(--accent); opacity:.5;}
-  .seo-empty .rings-icon span:nth-child(3){ inset:28px; background: var(--brass); border:none; }
-  .seo-empty h3{ font-size: 22px; font-weight: 800; }
-  .seo-empty p{ color: var(--ink-soft); max-width: 420px; font-size: 15px; }
+  .seo-icon{
+    width: 50px; height:50px; border-radius: 15px;
+    display:flex; align-items:center; justify-content:center;
+    background: var(--bg-alt);
+    color: var(--accent);
+    flex-shrink:0;
+  }
+  .seo-icon svg{ width:24px; height:24px; }
+  .seo-tag{
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: var(--bg-alt);
+    color: var(--brass);
+    font-size: 11px; font-weight: 700;
+    white-space: nowrap;
+  }
+  .seo-card h3{ font-size: 17px; font-weight: 800; color: var(--ink); }
+  .seo-domain{
+    display:inline-block; direction: ltr; unicode-bidi: isolate;
+    font-size: 12px; color: var(--muted); margin-top: 2px;
+  }
+  .seo-card p{ font-size: 14px; color: var(--ink-soft); flex:1; }
+  .seo-link{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size: 13.5px; font-weight: 700;
+    color: var(--ink);
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    margin-top: 4px;
+    transition: color .25s ease;
+  }
+  .seo-link svg{ width:13px; height:13px; transition: transform .25s ease; }
+  .seo-link:hover{ color: var(--brass); }
+  .seo-link:hover svg{ transform: translateX(-4px); }
 
   /* ---------- FINAL CTA ---------- */
   .final-cta{
@@ -541,6 +576,7 @@
     .hero{ padding-top: 60px; }
     .portrait-wrap{ order:-1; max-width: 320px; margin: 0 auto; }
     .projects{ grid-template-columns: 1fr 1fr; }
+    .seo-grid{ grid-template-columns: 1fr 1fr; }
     .final-cta{ margin: 0 16px; padding: 60px 28px; }
     .resume-grid{ grid-template-columns: 1fr; gap: 46px; }
   }
@@ -549,6 +585,7 @@
     .topbar-inner{ padding: 16px 22px; }
     .top-cta span{ display:none; }
     .projects{ grid-template-columns: 1fr; }
+    .seo-grid{ grid-template-columns: 1fr; }
     .section{ padding: 70px 0; }
     .section-head{ flex-direction:column; align-items:flex-start; gap:14px; }
     .hero-ctas{ flex-direction:column; }
@@ -583,12 +620,12 @@
           عملکرد و رشد وب‌سایت‌ها نقش مؤثرتری ایفا کنم.
         </p>
         <div class="hero-ctas">
-          <a href="#web-design" class="btn btn-primary">
-            نمونه کارهای طراحی سایت
+          <a href="#seo" class="btn btn-primary">
+            نمونه کارهای سئو
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           </a>
-          <a href="#seo" class="btn btn-outline">
-            نمونه کارهای سئو
+          <a href="#web-design" class="btn btn-outline">
+            نمونه کارهای طراحی سایت
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           </a>
           <a href="#resume" class="btn btn-outline">
@@ -610,8 +647,277 @@
     </div>
   </section>
 
+  <!-- SEO PORTFOLIO -->
+  <section class="section section-alt" id="seo">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="label">نمونه کار</div>
+          <h2>سئو</h2>
+        </div>
+        <p>نمونه‌ای از کسب‌وکارهایی که روی رشد و دیده‌شدنشان در گوگل کار کرده‌ام.</p>
+      </div>
+
+      <div class="seo-grid">
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            </div>
+            <span class="seo-tag">طراحی + سئو</span>
+          </div>
+          <div>
+            <h3>ولتارا</h3>
+            <span class="seo-domain">volltara.com</span>
+          </div>
+          <p>تأمین‌کننده تجهیزات صنعتی و انرژی خورشیدی؛ بهینه‌سازی فنی سایت و کلمات کلیدی حوزه تجهیزات برق صنعتی.</p>
+          <a class="seo-link" href="https://volltara.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c0-4 2-7 5-8 0 4-1 7-5 8z"/><path d="M12 12c0-4-2-7-5-8 0 4 1 7 5 8z"/><path d="M12 12c3 1 5 3 6 6-4 0-7-1-6-6z"/><path d="M12 12c-3 1-5 3-6 6 4 0 7-1 6-6z"/></svg>
+            </div>
+            <span class="seo-tag">طراحی + سئو</span>
+          </div>
+          <div>
+            <h3>وب‌سایت یوگا</h3>
+            <span class="seo-domain">rominayoga.com</span>
+          </div>
+          <p>سایت فروشگاهی یوگا شامل فروش دوره و محصول؛ سئوی محتوایی و فنی برای جذب کاربران هدفمند علاقه‌مند به یوگا.</p>
+          <a class="seo-link" href="https://rominayoga.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v5a1 1 0 0 0 1 1h1v2"/><path d="M18 19h1a1 1 0 0 0 1-1v-5"/><path d="M4 13a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/><path d="M6 11V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><path d="M9 19v2M15 19v2"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>راستا شریعت</h3>
+            <span class="seo-domain">rastashariat.com</span>
+          </div>
+          <p>طراحی و دکوراسیون داخلی؛ سئوی محلی و محتوایی برای معرفی پروژه‌ها و جذب مشتریان در این حوزه.</p>
+          <a class="seo-link" href="https://rastashariat.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            </div>
+            <span class="seo-tag">طراحی + سئو</span>
+          </div>
+          <div>
+            <h3>تالی الکتریک</h3>
+            <span class="seo-domain">talyelc.com</span>
+          </div>
+          <p>تأمین‌کننده تجهیزات صنعتی؛ سئوی تخصصی در حوزه انرژی خورشیدی و تجهیزات الکتریکی صنعتی.</p>
+          <a class="seo-link" href="https://talyelc.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-2-2z"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>آلوتکنیک</h3>
+            <span class="seo-domain">alootechnic.com</span>
+          </div>
+          <p>خدمات و تعمیرات تخصصی لوازم خانگی؛ سئوی محلی و کلمات کلیدی مرتبط با خدمات تعمیراتی.</p>
+          <a class="seo-link" href="https://alootechnic.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>ماترینو</h3>
+            <span class="seo-domain">materino.com</span>
+          </div>
+          <p>خرید چوب‌پلاست مستقیم از کارخانه و تولیدکننده؛ سئوی B2B برای معرفی محصولات صنعتی و افزایش سرنخ فروش.</p>
+          <a class="seo-link" href="https://materino.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2v6a2 2 0 0 0 4 0V2"/><path d="M7 8v13"/><path d="M17 2v20"/><path d="M17 2c-2 0-3 2-3 5v2c0 2 1 3 3 3"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>سپنو</h3>
+            <span class="seo-domain">sepeno.com</span>
+          </div>
+          <p>فروشگاه اینترنتی لوازم آشپزی و آشپزخانه؛ سئوی فروشگاهی و بهینه‌سازی صفحات دسته‌بندی محصولات.</p>
+          <a class="seo-link" href="https://sepeno.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="5" rx="1"/><circle cx="7" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>صداقت رنت</h3>
+            <span class="seo-domain">sedaghatrent.com</span>
+          </div>
+          <p>اجاره آنلاین خودرو؛ سئوی محلی برای شهرهای مختلف و کلمات کلیدی مرتبط با اجاره و کرایه خودرو.</p>
+          <a class="seo-link" href="https://sedaghatrent.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7h-6v6"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>روکوبروکر</h3>
+            <span class="seo-domain">rocobroker.com</span>
+          </div>
+          <p>بازار فارکس و ترید؛ سئوی محتوایی برای موضوعات تخصصی مالی و افزایش اعتبار سایت در این حوزه رقابتی.</p>
+          <a class="seo-link" href="https://rocobroker.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-2-1-3-1-5 2 2 3 5 3 8a6 6 0 0 1-12 0c0-4 2-6 4-10z"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>تجارت‌گرام</h3>
+            <span class="seo-domain">tejarat-gram.com</span>
+          </div>
+          <p>فعال در صنعت ریخته‌گری؛ سئوی تخصصی B2B برای دیده‌شدن در جست‌وجوهای صنعتی و تجاری.</p>
+          <a class="seo-link" href="https://tejarat-gram.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5z"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>کلینیک فخرایی</h3>
+            <span class="seo-domain">fakhraei.clinic</span>
+          </div>
+          <p>کلینیک زیبایی؛ سئوی محلی و محتوایی برای معرفی خدمات و افزایش رزرو آنلاین نوبت‌ها.</p>
+          <a class="seo-link" href="https://fakhraei.clinic/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></svg>
+            </div>
+            <span class="seo-tag">طراحی + سئو</span>
+          </div>
+          <div>
+            <h3>Permaglow Beauty</h3>
+            <span class="seo-domain">permaglowbeauty.nl</span>
+          </div>
+          <p>سالن زیبایی در هلند؛ پروژه‌ی بین‌المللی شامل تحلیل کلمات کلیدی، بهبود ساختار سایت و رفع خطاهای فنی سئو.</p>
+          <a class="seo-link" href="https://permaglowbeauty.nl/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>پپ انرژی</h3>
+            <span class="seo-domain">pep-energy.ir</span>
+          </div>
+          <p>فروش برق؛ سئوی فنی و محتوایی برای دیده‌شدن در جست‌وجوهای مرتبط با خرید و فروش انرژی برق.</p>
+          <a class="seo-link" href="https://pep-energy.ir/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="seo-card">
+          <div class="seo-card-top">
+            <div class="seo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+            </div>
+            <span class="seo-tag">سئو</span>
+          </div>
+          <div>
+            <h3>آذانیر</h3>
+            <span class="seo-domain">azanir.com</span>
+          </div>
+          <p>فروش تجهیزات صاعقه‌گیر؛ سئوی تخصصی صنعتی برای معرفی محصولات ایمنی و حفاظت از ساختمان‌ها.</p>
+          <a class="seo-link" href="https://azanir.com/" target="_blank" rel="noopener">
+            مشاهده سایت
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- WEB DESIGN PORTFOLIO -->
-  <section class="section section-alt" id="web-design">
+  <section class="section" id="web-design">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -713,25 +1019,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO PORTFOLIO (placeholder) -->
-  <section class="section" id="seo">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="label">نمونه کار</div>
-          <h2>سئو</h2>
-        </div>
-        <p>نتایج و پروژه‌های سئو به‌زودی همین‌جا اضافه می‌شود.</p>
-      </div>
-
-      <div class="seo-empty">
-        <div class="rings-icon"><span></span><span></span><span></span></div>
-        <h3>این بخش به‌زودی تکمیل می‌شود</h3>
-        <p>در حال آماده‌سازی نمونه‌کارهای سئو هستم؛ تا آن زمان می‌توانید برای صحبت درباره پروژه سئوی خودتان پیام بدهید.</p>
       </div>
     </div>
   </section>
