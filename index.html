@@ -75,9 +75,9 @@
   }
   .brand span{ color: var(--brass); }
   .top-cta{
-    display:flex; align-items:center; gap:8px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
     font-size: 14px; font-weight:600;
-    padding: 10px 20px;
+    padding: 13px 46px;
     border: 1px solid var(--ink);
     border-radius: 999px;
     transition: all .25s ease;
@@ -112,17 +112,12 @@
     font-weight: 900;
     line-height: 1.15;
     letter-spacing: -1px;
-    margin-bottom: 22px;
-  }
-  .hero h1 em{
-    font-style: normal;
-    color: var(--accent);
-    position: relative;
+    margin-bottom: 14px;
   }
   .hero-role{
     font-size: 20px;
-    color: var(--ink-soft);
-    font-weight: 500;
+    color: var(--accent);
+    font-weight: 700;
     margin-bottom: 28px;
   }
   .hero-bio{
@@ -262,6 +257,7 @@
     aspect-ratio: 4/3;
     overflow: hidden;
     background: var(--bg-alt);
+    cursor: zoom-in;
   }
   .card-shot img{
     width:100%; height:100%; object-fit: cover; object-position: top;
@@ -420,7 +416,6 @@
   }
 
   /* ---------- LIGHTBOX ---------- */
-  .card-shot{ cursor: zoom-in; }
   .lightbox{
     position: fixed; inset:0; z-index: 200;
     background: rgba(20,19,17,.86);
@@ -471,14 +466,13 @@
   .lightbox-close svg{ width:18px; height:18px; }
 
   /* ---------- RESUME ---------- */
-  .resume-grid{
+  .resume-row{
     display:grid;
-    grid-template-columns: 1fr .6fr;
-    gap: 60px;
-    align-items:start;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
   }
-  .resume-block{ margin-bottom: 50px; }
-  .resume-block:last-child{ margin-bottom:0; }
+  .resume-row:last-child{ margin-bottom:0; }
   .resume-block h3{
     font-size: 19px; font-weight: 800;
     margin-bottom: 26px;
@@ -517,28 +511,38 @@
     margin-top: 10px;
   }
 
+  /* skills — filled edge to edge, split right/left */
+  .chip-columns{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 28px;
+  }
+  .chip-col{
+    display:flex; flex-direction:column; gap: 12px;
+  }
+  .chip{
+    display:inline-flex; align-items:center;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    font-size: 13px; font-weight: 600;
+    color: var(--ink-soft);
+  }
+
   .side-card{
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 20px;
     padding: 30px;
-    margin-bottom: 26px;
   }
-  .side-card:last-child{ margin-bottom:0; }
+  .side-card + .side-card{ margin-top: 26px; }
   .side-card h4{
     font-size: 15px; font-weight:800;
     margin-bottom: 20px;
     padding-bottom: 14px;
     border-bottom: 1px solid var(--line);
-  }
-  .chip-list{ display:flex; flex-wrap:wrap; gap:9px; }
-  .chip{
-    padding: 8px 15px;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: var(--bg);
-    font-size: 12.5px; font-weight: 600;
-    color: var(--ink-soft);
   }
   .cert-item{ padding: 13px 0; border-bottom: 1px solid var(--line); }
   .cert-item:last-child{ border-bottom:none; padding-bottom:0; }
@@ -578,18 +582,20 @@
     .projects{ grid-template-columns: 1fr 1fr; }
     .seo-grid{ grid-template-columns: 1fr 1fr; }
     .final-cta{ margin: 0 16px; padding: 60px 28px; }
-    .resume-grid{ grid-template-columns: 1fr; gap: 46px; }
+    .resume-row{ grid-template-columns: 1fr; gap: 44px; }
   }
   @media (max-width: 640px){
     .wrap{ padding: 0 22px; }
     .topbar-inner{ padding: 16px 22px; }
     .top-cta span{ display:none; }
+    .top-cta{ padding: 12px 22px; }
     .projects{ grid-template-columns: 1fr; }
     .seo-grid{ grid-template-columns: 1fr; }
     .section{ padding: 70px 0; }
     .section-head{ flex-direction:column; align-items:flex-start; gap:14px; }
     .hero-ctas{ flex-direction:column; }
     .btn{ justify-content:center; }
+    .chip-columns{ grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -611,10 +617,10 @@
       <div>
         <div class="eyebrow">درباره من</div>
         <h1>رومینا فیروزبخش</h1>
-                <h2>طراح سایت و متخصص سئو</h2>
-
+        <div class="hero-role">طراح سایت و متخصص سئو</div>
         <p class="hero-bio">
-          ۶ ساله در زمینه سئو و طراحی سایت فعالیت می‌کنم و روی بیش از ۲۰ پروژه در حوزه‌های مختلف کار کرده‌ام. تمرکزم ساخت سایت‌هایی است که هم تجربه کاربری خوبی داشته باشند و هم در گوگل دیده شوند.
+          ۶ ساله در زمینه سئو و طراحی سایت فعالیت می‌کنم و روی بیش از ۲۰ پروژه در حوزه‌های مختلف کار کرده‌ام.
+          تمرکزم ساخت سایت‌هایی است که هم تجربه کاربری خوبی داشته باشند و هم در گوگل دیده شوند.
         </p>
         <div class="hero-ctas">
           <a href="#seo" class="btn btn-primary">
@@ -881,7 +887,7 @@
             <span class="seo-tag">سئو</span>
           </div>
           <div>
-            <h3>پیمان انرژی</h3>
+            <h3>پپ انرژی</h3>
             <span class="seo-domain">pep-energy.ir</span>
           </div>
           <p>فروش برق؛ سئوی فنی و محتوایی برای دیده‌شدن در جست‌وجوهای مرتبط با خرید و فروش انرژی برق.</p>
@@ -1031,56 +1037,94 @@
         <p>مسیر حرفه‌ای من در حوزه سئو، دیجیتال مارکتینگ و طراحی سایت.</p>
       </div>
 
-      <div class="resume-grid">
-
-        <!-- MAIN COLUMN -->
-        <div>
-
-          <div class="resume-block">
-            <h3>سوابق شغلی</h3>
-            <div class="timeline">
-              <div class="t-item">
-                <div class="t-role">کارشناس سئو</div>
-                <div class="t-org">تجارت‌گرام (تهران)</div>
-                <div class="t-date">اردیبهشت ۱۴۰۴ – اسفند ۱۴۰۴</div>
-              </div>
-              <div class="t-item">
-                <div class="t-role">کارشناس سئو</div>
-                <div class="t-org">آژانس دیجیتال مارکتینگ فخرائی (تهران)</div>
-                <div class="t-date">مهر ۱۴۰۳ – اسفند ۱۴۰۳</div>
-              </div>
-              <div class="t-item">
-                <div class="t-role">کارشناس سئو</div>
-                <div class="t-org">صنوبر (تهران)</div>
-                <div class="t-date">دی ۱۴۰۰ – شهریور ۱۴۰۳</div>
-              </div>
+      <!-- ROW 1: work experience  |  education -->
+      <div class="resume-row">
+        <div class="resume-block">
+          <h3>سوابق شغلی</h3>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-role">کارشناس سئو</div>
+              <div class="t-org">تجارت‌گرام (تهران)</div>
+              <div class="t-date">اردیبهشت ۱۴۰۴ – اسفند ۱۴۰۴</div>
+            </div>
+            <div class="t-item">
+              <div class="t-role">کارشناس سئو</div>
+              <div class="t-org">آژانس دیجیتال مارکتینگ فخرائی (تهران)</div>
+              <div class="t-date">مهر ۱۴۰۳ – اسفند ۱۴۰۳</div>
+            </div>
+            <div class="t-item">
+              <div class="t-role">کارشناس سئو</div>
+              <div class="t-org">صنوبر (تهران)</div>
+              <div class="t-date">دی ۱۴۰۰ – شهریور ۱۴۰۳</div>
             </div>
           </div>
+        </div>
 
-          <div class="resume-block">
-            <h3>سوابق تحصیلی</h3>
-            <div class="timeline">
-              <div class="t-item">
-                <div class="t-role">لیسانس مهندسی فناوری اطلاعات (IT)</div>
-                <div class="t-org">دانشگاه آزاد اسلامی، واحد تهران شمال</div>
-                <div class="t-date">آذر ۱۳۹۵ – خرداد ۱۴۰۰</div>
-              </div>
+        <div class="resume-block">
+          <h3>سوابق تحصیلی</h3>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-role">لیسانس مهندسی فناوری اطلاعات (IT)</div>
+              <div class="t-org">دانشگاه آزاد اسلامی، واحد تهران شمال</div>
+              <div class="t-date">آذر ۱۳۹۵ – خرداد ۱۴۰۰</div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="resume-block">
-        <!-- SIDEBAR -->
-        <div>
+      <!-- ROW 2: projects  |  internships -->
+      <div class="resume-row">
+        <div class="resume-block">
+          <h3>پروژه‌ها</h3>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-role">Permaglow Beauty</div>
+              <div class="t-org">سئوی یک کسب‌وکار بین‌المللی هلندی</div>
+              <div class="t-date">مرداد ۱۴۰۴ – دی ۱۴۰۴</div>
+              <p class="t-desc">مسئولیت کامل بهینه‌سازی سئو شامل تحلیل کلمات کلیدی، بهبود ساختار سایت، بهینه‌سازی محتوا و رفع خطاهای فنی را برعهده داشتم و شاخص‌های عملکرد سایت را بهبود دادم.</p>
+              <a class="t-link" href="https://permaglowbeauty.nl/" target="_blank" rel="noopener">permaglowbeauty.nl</a>
+            </div>
+            <div class="t-item">
+              <div class="t-role">وب‌سایت یوگا</div>
+              <div class="t-org">طراحی و اجرای کامل وب‌سایت در حوزه یوگا</div>
+              <div class="t-date">بهمن ۱۴۰۳ – اردیبهشت ۱۴۰۵</div>
+              <p class="t-desc">طراحی رابط کاربری، تولید محتوا، بهینه‌سازی فنی و محتوایی برای سئو و مدیریت تمامی مراحل توسعه و رشد سایت با تمرکز بر افزایش دیده‌شدن در گوگل.</p>
+              <a class="t-link" href="https://rominayoga.com/" target="_blank" rel="noopener">rominayoga.com</a>
+            </div>
+          </div>
+        </div>
 
-          <div class="side-card">
-            <h4>مهارت‌ها</h4>
-            <div class="chip-list">
+        <div class="resume-block">
+          <h3>کارآموزی‌ها</h3>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-role">سئو در صنوبر</div>
+              <div class="t-org">دوره کارآموزی ۳ ماهه در زمینه سئو</div>
+              <div class="t-date">مهر ۱۴۰۰ – آذر ۱۴۰۰</div>
+            </div>
+            <div class="t-item">
+              <div class="t-role">طراحی سایت در شرکت دوران</div>
+              <div class="t-org">دوره کارآموزی ۳ ماهه در زمینه برنامه‌نویسی با Golang و Python</div>
+              <div class="t-date">تیر ۱۳۹۸ – شهریور ۱۳۹۸</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 3: skills — full width, split right / left -->
+      <div class="resume-row" style="grid-template-columns: 1fr;">
+        <div class="resume-block">
+          <h3>مهارت‌ها</h3>
+          <div class="chip-columns">
+            <div class="chip-col">
               <span class="chip">سئو</span>
               <span class="chip">کیوردریسرچ</span>
               <span class="chip">On-page SEO</span>
               <span class="chip">Off-page SEO</span>
               <span class="chip">Local SEO</span>
               <span class="chip">Link Building</span>
+            </div>
+            <div class="chip-col">
               <span class="chip">Technical SEO</span>
               <span class="chip">SEO Tools</span>
               <span class="chip">Content Optimization</span>
@@ -1090,27 +1134,32 @@
               <span class="chip">Prompt نویسی</span>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="side-card">
-            <h4>دوره‌ها و گواهینامه‌ها</h4>
-            <div class="cert-item">
-              <div class="c-name">سئو پیشرفته</div>
-              <div class="c-meta">عماد چابک، امین هاشمی، محسن حبیبی</div>
-            </div>
-            <div class="cert-item">
-              <div class="c-name">HTML &amp; CSS</div>
-              <div class="c-meta">مجتمع فنی تهران (نیاوران) — مرداد ۱۳۹۷</div>
-            </div>
-            <div class="cert-item">
-              <div class="c-name">+Network</div>
-              <div class="c-meta">مجتمع فنی تهران (نیاوران) — مرداد ۱۳۹۹</div>
-            </div>
-            <div class="cert-item">
-              <div class="c-name">CEH</div>
-              <div class="c-meta">موسسه ایفل — مهر ۱۳۹۸</div>
-            </div>
+      <!-- ROW 4: certificates  |  language + contact -->
+      <div class="resume-row">
+        <div class="side-card">
+          <h4>دوره‌ها و گواهینامه‌ها</h4>
+          <div class="cert-item">
+            <div class="c-name">سئو پیشرفته</div>
+            <div class="c-meta">عماد چابک، امین هاشمی، محسن حبیبی</div>
           </div>
+          <div class="cert-item">
+            <div class="c-name">HTML &amp; CSS</div>
+            <div class="c-meta">مجتمع فنی تهران (نیاوران) — مرداد ۱۳۹۷</div>
+          </div>
+          <div class="cert-item">
+            <div class="c-name">+Network</div>
+            <div class="c-meta">مجتمع فنی تهران (نیاوران) — مرداد ۱۳۹۹</div>
+          </div>
+          <div class="cert-item">
+            <div class="c-name">CEH</div>
+            <div class="c-meta">موسسه ایفل — مهر ۱۳۹۸</div>
+          </div>
+        </div>
 
+        <div>
           <div class="side-card">
             <h4>زبان</h4>
             <div class="lang-row">
@@ -1135,14 +1184,13 @@
                 تهران، فرمانیه
               </li>
             </ul>
-            <a class="linkedin-btn" style="margin-top:18px;" href="https://www.linkedin.com/in/rominafirouz/" target="_blank" rel="noopener">
+            <a class="linkedin-btn" style="margin-top:18px;" href="https://www.linkedin.com/in/romina-firouzbakhsh" target="_blank" rel="noopener">
               مشاهده لینکدین
             </a>
           </div>
-
         </div>
-
       </div>
+
     </div>
   </section>
 
